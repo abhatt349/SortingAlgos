@@ -1,8 +1,4 @@
-
-#include <iostream>
-#include <vector>
-
-using std::vector;
+#include "Sorts.h"
 
 vector<int> getFirstHalf(vector<int> v) {
   int n = v.size()/2;
@@ -45,6 +41,12 @@ vector<int> merge(vector<int> a, vector<int> b) {
   }
 }
 
+void print(vector<int> v) {
+	for (int i = 0; i < v.size(); ++i) {
+		std::cout << v[i] << " ";
+	}
+	std::cout << std::endl;
+}
 
 void MergeSort(vector<int> &v) {
   if (v.size() <= 1) {
@@ -57,14 +59,4 @@ void MergeSort(vector<int> &v) {
     MergeSort(b);
     v = merge(a, b);
   }
-}
-
-
-int main() {
-  vector<int> v = {5,6,3,8,7,2,1,4,9,8,4,5,0};
-  MergeSort(v);
-  for (int i = 0; i < v.size(); ++i) {
-    std::cout << v[i] << " ";
-  }
-  std::cout << std::endl
 }

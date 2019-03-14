@@ -1,8 +1,4 @@
-
-#include <iostream>
-#include <vector>
-
-using std::vector;
+#include "Sorts.h"
 
 void BubbleSort(vector<int> &v) {
   for (int i = 0; i < v.size(); ++i) {
@@ -11,20 +7,11 @@ void BubbleSort(vector<int> &v) {
         if (j == v.size()-1) {
           v.push_back(v[j]);
         }
-        else { 
+        else {
           v.insert(v.begin()+j+2, v[j]);
         }
         v.erase(v.begin()+j);
       }
     }
   }
-}
-
-int main() {
-  vector<int> v = {5,6,3,8,7,2,1,4,9,8,4,5,0};
-  BubbleSort(v);
-  for (int i = 0; i < v.size(); ++i) {
-    std::cout << v[i] << " ";
-  }
-  std::cout << std::endl;
 }
